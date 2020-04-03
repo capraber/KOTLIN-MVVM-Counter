@@ -1,8 +1,8 @@
 package com.globant.counter
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import com.globant.counter.mvvm.viewmodel.MainActivityViewModel
 import com.globant.counter.mvvm.viewmodel.states.CounterData

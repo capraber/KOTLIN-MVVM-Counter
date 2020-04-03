@@ -1,6 +1,6 @@
 package com.globant.counter
 
-import android.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.globant.counter.mvvm.viewmodel.MainActivityViewModel
 import com.globant.counter.mvvm.viewmodel.states.CounterState
 import org.junit.Rule
