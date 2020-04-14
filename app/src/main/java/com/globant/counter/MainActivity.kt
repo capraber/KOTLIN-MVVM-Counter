@@ -1,39 +1,27 @@
 package com.globant.counter
 
-import androidx.lifecycle.Observer
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import com.globant.counter.databinding.ActivityMainBinding
 import com.globant.counter.mvvm.viewmodel.MainActivityViewModel
 import com.globant.counter.mvvm.viewmodel.states.CounterData
 import com.globant.counter.mvvm.viewmodel.states.CounterState
-import kotlinx.android.synthetic.main.activity_main.countBtnDec
-import kotlinx.android.synthetic.main.activity_main.countBtnInc
 import kotlinx.android.synthetic.main.activity_main.countLabel
-import kotlinx.android.synthetic.main.activity_main.resetBtn
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel: MainActivityViewModel = MainActivityViewModel()
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        viewModel.getValue().observe(this, Observer { updateUI(it) })
-        initListeners()
-    }
-
-    private fun initListeners() {
-        countBtnInc.setOnClickListener {
-            viewModel.incValue()
-        }
-        countBtnDec.setOnClickListener {
-            viewModel.decValue()
-        }
-        resetBtn.setOnClickListener {
-            viewModel.resetValue()
-        }
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.viewModel = ViewModelProviders.of(this)[MainActivityViewModel::class.java]
+        binding.lifecycleOwner = this
+        binding.viewModel?.getValue()?.observe(this, Observer { updateUI(it) })
     }
 
     private fun updateUI(it: CounterData?) {

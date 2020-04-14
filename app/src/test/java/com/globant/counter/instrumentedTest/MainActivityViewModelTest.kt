@@ -1,4 +1,4 @@
-package com.globant.counter
+package com.globant.counter.instrumentedTest
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.globant.counter.mvvm.viewmodel.MainActivityViewModel

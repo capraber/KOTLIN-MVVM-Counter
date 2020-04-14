@@ -1,34 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/countLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_main_activity_starting_count_label_value"
-        android:textSize="40sp" />
+    <data>
 
-    <Button
-        android:id="@+id/countBtnInc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_main_activity_count_inc_btn_label" />
+        <variable
+            name="viewModel"
+            type="com.globant.counter.mvvm.viewmodel.MainActivityViewModel" />
+    </data>
 
-    <Button
-        android:id="@+id/countBtnDec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_main_activity_count_dec_btn_label" />
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/resetBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_main_activity_reset_btn_label" />
+        <TextView
+            android:id="@+id/countLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_main_activity_starting_count_label_value"
+            android:textSize="40sp" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/countBtnInc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.incValue()}"
+            android:text="@string/txt_main_activity_count_inc_btn_label" />
+
+        <Button
+            android:id="@+id/countBtnDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.decValue()}"
+            android:text="@string/txt_main_activity_count_dec_btn_label" />
+
+        <Button
+            android:id="@+id/resetBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.resetValue()}"
+            android:text="@string/txt_main_activity_reset_btn_label" />
+
+    </LinearLayout>
+</layout>
