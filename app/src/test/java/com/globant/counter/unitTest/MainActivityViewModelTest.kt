@@ -1,8 +1,8 @@
-package com.globant.counter.instrumentedTest
+package com.globant.counter.unitTest
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.globant.counter.mvvm.viewmodel.MainActivityViewModel
-import com.globant.counter.mvvm.viewmodel.states.CounterState
+import com.globant.counter.mvvm.viewmodel.MainActivityViewModel.CounterState
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TestRule
