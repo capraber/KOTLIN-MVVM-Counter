@@ -16,5 +16,4 @@ class CountModel {
     fun dec() {
         count -= 1
     }
-
 }

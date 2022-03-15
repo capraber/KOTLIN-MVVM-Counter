@@ -1,4 +1,4 @@
-package com.globant.counter.unitTest
+package com.globant.counter.instrumentedTest
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
@@ -22,20 +22,20 @@ class MainActivityTest {
 
     @Test
     fun onPressIncUpdateLabel() {
-        onView(withId(R.id.countBtnInc)).perform(click())
-        onView(withId(R.id.countLabel)).check(matches(withText(ONE)))
+        onView(withId(R.id.count_btn_inc)).perform(click())
+        onView(withId(R.id.count_label)).check(matches(withText(ONE)))
     }
 
     @Test
     fun onPressDecUpdateLabel() {
-        onView(withId(R.id.countBtnDec)).perform(click())
-        onView(withId(R.id.countLabel)).check(matches(withText(MINUS_ONE)))
+        onView(withId(R.id.count_btn_dec)).perform(click())
+        onView(withId(R.id.count_label)).check(matches(withText(MINUS_ONE)))
     }
 
     @Test
     fun onPressResetUpdateLabel() {
-        onView(withId(R.id.resetBtn)).perform(click())
-        onView(withId(R.id.countLabel)).check(matches(withText(ZERO)))
+        onView(withId(R.id.reset_btn)).perform(click())
+        onView(withId(R.id.count_label)).check(matches(withText(ZERO)))
     }
 
     companion object {
