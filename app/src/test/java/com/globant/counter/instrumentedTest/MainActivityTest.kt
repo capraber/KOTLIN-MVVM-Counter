@@ -13,12 +13,15 @@ import com.globant.counter.R
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.annotation.Config
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
+@Config(sdk = [29])
 class MainActivityTest {
 
-    @get:Rule var activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
+    @get:Rule
+    var activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
     fun onPressIncUpdateLabel() {
