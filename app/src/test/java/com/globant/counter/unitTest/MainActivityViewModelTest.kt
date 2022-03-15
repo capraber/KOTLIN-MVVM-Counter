@@ -3,18 +3,22 @@ package com.globant.counter.unitTest
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.globant.counter.mvvm.viewmodel.MainActivityViewModel
 import com.globant.counter.mvvm.viewmodel.MainActivityViewModel.CounterState
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TestRule
-import org.junit.runner.RunWith
-import org.mockito.junit.MockitoJUnitRunner
 
-@RunWith(MockitoJUnitRunner::class)
 class MainActivityViewModelTest {
 
-    @get:Rule var rule: TestRule = InstantTaskExecutorRule()
+    @get:Rule
+    var rule: TestRule = InstantTaskExecutorRule()
 
-    private val viewModel: MainActivityViewModel = MainActivityViewModel()
+    private lateinit var viewModel: MainActivityViewModel
+
+    @Before
+    fun setup() {
+        viewModel = MainActivityViewModel()
+    }
 
     @Test
     fun initialStateTest() {
