@@ -1,19 +1,21 @@
 package com.globant.counter.mvvm.model
 
-class CountModel {
+import com.globant.counter.mvvm.contract.CountContract
 
-    var count = 0
+class CountModel : CountContract.Model {
+
+    override var count: Int = 0
         private set
 
-    fun reset() {
+    override fun reset() {
         count = 0
     }
 
-    fun inc() {
+    override fun inc() {
         count += 1
     }
 
-    fun dec() {
+    override fun dec() {
         count -= 1
     }
 }

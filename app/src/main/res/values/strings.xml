@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Counter</string>
-    <string name="txt_main_activity_starting_count_label_value">0</string>
-    <string name="txt_main_activity_count_inc_btn_label">inc</string>
-    <string name="txt_main_activity_count_dec_btn_label">dec</string>
-    <string name="txt_main_activity_reset_btn_label">reset</string>
-    <string name="main_activity_toast_decremented_text">Decremented</string>
-    <string name="main_activity_toast_incremented_text">Incremented</string>
-    <string name="main_activity_toast_reset_text">Reset</string>
+    <string name="txt_starting_count_label_value">0</string>
+    <string name="txt_count_inc_btn_label">inc</string>
+    <string name="txt_count_dec_btn_label">dec</string>
+    <string name="txt_reset_btn_label">reset</string>
+    <string name="decremented_text">Decremented</string>
+    <string name="incremented_text">Incremented</string>
+    <string name="reset_text">Reset</string>
 </resources>
