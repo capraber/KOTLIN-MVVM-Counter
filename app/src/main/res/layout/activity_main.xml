@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.globant.counter.mvvm.viewmodel.MainActivityViewModel" />
+            type="com.globant.counter.mvvm.viewmodel.CountViewModel" />
     </data>
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:id="@+id/count_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_main_activity_starting_count_label_value"
+            android:text="@string/txt_starting_count_label_value"
             android:textSize="@dimen/count_label_text_size" />
 
         <Button
@@ -27,20 +27,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{() -> viewModel.incValue()}"
-            android:text="@string/txt_main_activity_count_inc_btn_label" />
+            android:text="@string/txt_count_inc_btn_label" />
 
         <Button
             android:id="@+id/count_btn_dec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{() -> viewModel.decValue()}"
-            android:text="@string/txt_main_activity_count_dec_btn_label" />
+            android:text="@string/txt_count_dec_btn_label" />
 
         <Button
             android:id="@+id/reset_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{() -> viewModel.resetValue()}"
-            android:text="@string/txt_main_activity_reset_btn_label" />
+            android:text="@string/txt_reset_btn_label" />
     </LinearLayout>
 </layout>

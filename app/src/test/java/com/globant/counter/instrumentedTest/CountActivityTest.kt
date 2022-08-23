@@ -8,7 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import com.globant.counter.MainActivity
+import com.globant.counter.activity.CountActivity
 import com.globant.counter.R
 import org.junit.Rule
 import org.junit.Test
@@ -18,10 +18,10 @@ import org.robolectric.annotation.Config
 @RunWith(AndroidJUnit4::class)
 @LargeTest
 @Config(sdk = [29])
-class MainActivityTest {
+class CountActivityTest {
 
     @get:Rule
-    var activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
+    var activityScenarioRule = ActivityScenarioRule(CountActivity::class.java)
 
     @Test
     fun onPressIncUpdateLabel() {

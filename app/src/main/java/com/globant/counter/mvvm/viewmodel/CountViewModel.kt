@@ -1,29 +1,29 @@
 package com.globant.counter.mvvm.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.globant.counter.mvvm.contract.CountContract
 import com.globant.counter.mvvm.model.CountModel
 
-class MainActivityViewModel : ViewModel() {
-
-    private val model = CountModel()
+class CountViewModel(private val model: CountContract.Model) : ViewModel(), CountContract.ViewModel {
 
     private val mutableLiveData: MutableLiveData<CounterData> = MutableLiveData()
-    fun getValue(): MutableLiveData<CounterData> {
+    override fun getValue(): LiveData<CounterData> {
         return mutableLiveData
     }
 
-    fun resetValue() {
+    override fun resetValue() {
         model.reset()
         mutableLiveData.value = CounterData(CounterState.INITIAL)
     }
 
-    fun incValue() {
+    override fun incValue() {
         model.inc()
         mutableLiveData.value = CounterData(CounterState.INC, model.count)
     }
 
-    fun decValue() {
+    override fun decValue() {
         model.dec()
         mutableLiveData.value = CounterData(CounterState.DEC, model.count)
     }

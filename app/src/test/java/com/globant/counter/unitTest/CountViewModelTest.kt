@@ -1,23 +1,25 @@
 package com.globant.counter.unitTest
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.globant.counter.mvvm.viewmodel.MainActivityViewModel
-import com.globant.counter.mvvm.viewmodel.MainActivityViewModel.CounterState
+import com.globant.counter.mvvm.contract.CountContract
+import com.globant.counter.mvvm.model.CountModel
+import com.globant.counter.mvvm.viewmodel.CountViewModel
+import com.globant.counter.mvvm.viewmodel.CountViewModel.CounterState
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TestRule
 
-class MainActivityViewModelTest {
+class CountViewModelTest {
 
     @get:Rule
     var rule: TestRule = InstantTaskExecutorRule()
 
-    private lateinit var viewModel: MainActivityViewModel
+    private lateinit var viewModel: CountContract.ViewModel
 
     @Before
     fun setup() {
-        viewModel = MainActivityViewModel()
+        viewModel = CountViewModel(CountModel())
     }
 
     @Test
